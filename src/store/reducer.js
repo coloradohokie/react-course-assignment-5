@@ -1,4 +1,4 @@
-
+import * as actionTypes from './actions'
 
 const initialState = {
     persons: []
@@ -6,12 +6,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'ADD_PERSON': 
+        case actionTypes.ADD_PERSON: 
             return {
             ...state,
             persons: state.persons.concat(action.payload)
             }
-        case 'DELETE_PERSON':            
+        case actionTypes.DELETE_PERSON:            
             const updatedArray = state.persons.filter(person => person.id !== action.id)
             return {
                 ...state,
